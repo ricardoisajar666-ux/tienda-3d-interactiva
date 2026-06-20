@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tienda 3D - Explora y Camina</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏪</text></svg>">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#000;overflow:hidden;font-family:'Segoe UI',system-ui,sans-serif}
@@ -379,8 +380,8 @@ function createAvatar(){
     const bR=new THREE.Mesh(new THREE.BoxGeometry(0.05,0.011,0.007),browMat);bR.position.set(0.1,0.14,0.025);bR.rotation.z=-0.12;faceGroup.add(bR);
     
     const blushMat=new THREE.MeshStandardMaterial({color:0xff8888,roughness:0.6,transparent:true,opacity:0.35});
-    faceGroup.add(Object.assign(new THREE.Mesh(new THREE.CircleGeometry(0.028,16),blushMat),{position:new THREE.Vector3(-0.16,-0.01,0.025)}));
-    faceGroup.add(Object.assign(new THREE.Mesh(new THREE.CircleGeometry(0.028,16),blushMat),{position:new THREE.Vector3(0.16,-0.01,0.025)}));
+    const cL=new THREE.Mesh(new THREE.CircleGeometry(0.028,16),blushMat);cL.position.set(-0.16,-0.01,0.025);faceGroup.add(cL);
+    const cR=new THREE.Mesh(new THREE.CircleGeometry(0.028,16),blushMat);cR.position.set(0.16,-0.01,0.025);faceGroup.add(cR);
     
     mouthObj=new THREE.Mesh(new THREE.SphereGeometry(0.028,20,10,0,Math.PI*2,0,Math.PI/2),new THREE.MeshPhysicalMaterial({color:0xe74c3c,roughness:0.2,clearcoat:0.6}));
     mouthObj.rotation.x=Math.PI;mouthObj.position.set(0,-0.06,0.01);faceGroup.add(mouthObj);
